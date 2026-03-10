@@ -54,6 +54,12 @@
 		#tabdatxe.elementor-widget-tabs.elementor-tabs-view-horizontal .elementor-tab-desktop-title { font-size: 13px; padding: 8px 9px; }
 	</style>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0"><script src="./txbl_files/wp-emoji-release.min.js.download" defer=""></script><script charset="utf-8" src="./txbl_files/twk-chunk-2d0d2b7c.js.download"></script><script charset="utf-8" src="./txbl_files/twk-chunk-2d224aff.js.download"></script><script charset="utf-8" src="./txbl_files/twk-chunk-2d0aef27.js.download"></script><script charset="utf-8" src="./txbl_files/twk-chunk-3ea2c7ce.js.download"></script><script charset="utf-8" src="./txbl_files/twk-chunk-2d0da3af.js.download"></script><script charset="utf-8" src="./txbl_files/twk-chunk-4fe9d5dd.js.download"></script><script charset="utf-8" src="./txbl_files/twk-chunk-7941cc06.js.download"></script><script charset="utf-8" src="./txbl_files/twk-chunk-6289ff8e.js.download"></script><script charset="utf-8" src="./txbl_files/twk-chunk-2d0c8092.js.download"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("pTbkfYTCRiApOYyhK"); // Public Key của bạn
+   })();
+</script>
 </head>
 <body class="wp-singular page-template page-template-elementor_header_footer page page-id-304 wp-theme-binhvu elementor-default elementor-template-full-width elementor-kit-5 elementor-page elementor-page-304 e--ua-blink e--ua-edge e--ua-webkit" data-elementor-device-mode="desktop">
 	<div data-elementor-type="header" data-elementor-id="112" class="elementor elementor-112 elementor-location-header">
@@ -206,7 +212,7 @@
 										</div>
 										<div class="elementor-element elementor-element-7b2f85b elementor-button-align-stretch elementor-widget elementor-widget-form" data-id="7b2f85b" data-element_type="widget" data-settings="{&quot;step_next_label&quot;:&quot;Ti\u1ebfp theo&quot;,&quot;step_previous_label&quot;:&quot;Tr\u1edf l\u1ea1i&quot;,&quot;button_width&quot;:&quot;100&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;}" data-widget_type="form.default">
 											<div class="elementor-widget-container">
-												<form class="elementor-form" method="post" name="New Form">
+												<form id="taxi-booking-form" class="elementor-form" name="New Form">
 													<input type="hidden" name="post_id" value="304">
 													<input type="hidden" name="form_id" value="7b2f85b">
 													<input type="hidden" name="referer_title" value="Đặt Xe - taxibaolocditinh.com">
@@ -624,5 +630,45 @@
 	<script id="wp-emoji-settings" type="application/json">
 	{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://taxibaolocditinh.com/wp-includes/js/wp-emoji-release.min.js?ver=6.9"}}
 	</script>
+
+	<script>
+document.getElementById('taxi-booking-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Ngăn trang web tải lại khi ấn nút
+
+    // Thay đổi trạng thái nút để người dùng biết đang gửi
+    const btn = this.querySelector('button[type="submit"]');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = "<span>Đang gửi...</span>";
+    btn.disabled = true;
+
+    // Lấy dữ liệu từ các ô input
+    const templateParams = {
+        hotenkh: document.getElementById('form-field-hotenkh').value,
+        sdt: document.getElementById('form-field-sdt').value,
+        email: document.getElementById('form-field-email').value,
+        loaixe: document.getElementById('form-field-loaixe').value,
+        thoigian: document.getElementById('form-field-thoigian').value,
+        soluong: document.getElementById('form-field-field_e468794').value,
+        diadiemdi: document.getElementById('form-field-diadiemdi').value,
+        diadiemden: document.getElementById('form-field-diadiemden').value,
+        ghichu: document.getElementById('form-field-ghichu').value
+    };
+
+    // Gửi đến EmailJS
+    emailjs.send('service_zaokof9', 'template_lcyi8v1', templateParams)
+        .then(function() {
+            alert('Đặt xe thành công! Chúng tôi sẽ liên hệ lại với bạn sớm nhất.');
+            document.getElementById('taxi-booking-form').reset(); // Xóa sạch form
+        }, function(error) {
+            alert('Gửi yêu cầu thất bại. Vui lòng thử lại hoặc gọi Hotline!');
+            console.log('FAILED...', error);
+        })
+        .finally(function() {
+            btn.innerHTML = originalText;
+            btn.disabled = false;
+        });
+});
+</script>
+
 </body>
 </html>
