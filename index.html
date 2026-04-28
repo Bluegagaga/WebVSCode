@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxi Bảo Lộc Đi Tỉnh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#10b981', // Màu xanh ngọc tương tự trong hình (Emerald)
+                        secondary: '#047857'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Tùy chỉnh font chữ cơ bản */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center gap-2">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
+                        <i class="fa-solid fa-taxi"></i>
+                    </div>
+                </div>
+
+                <button class="md:hidden text-2xl text-gray-600 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <nav class="hidden md:flex space-x-6 font-semibold text-sm text-gray-600">
+                    <a href="#" class="text-primary border-b-2 border-primary pb-1">TRANG CHỦ</a>
+                    <a href="#" class="hover:text-primary transition">ĐẶT XE THEO YÊU CẦU</a>
+                    <a href="#" class="hover:text-primary transition">BẢNG GIÁ ĐI TỈNH</a>
+                    <a href="#" class="hover:text-primary transition">TIN TỨC SỰ KIỆN</a>
+                    <a href="#" class="hover:text-primary transition">LIÊN HỆ</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="relative bg-gray-900 bg-[url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-center">
+        <div class="absolute inset-0 bg-black/60"></div> <div class="relative max-w-7xl mx-auto px-4 py-12 md:py-20 flex flex-col md:flex-row items-center gap-8">
+            
+            <div class="w-full md:w-1/2 text-center md:text-left text-white">
+                <h1 class="text-4xl md:text-5xl font-bold text-primary mb-2 tracking-wide uppercase shadow-black drop-shadow-md">Taxi Bảo Lộc Đi Tỉnh</h1>
+                <h2 class="text-2xl md:text-3xl font-bold text-yellow-400 mb-4 drop-shadow-md">TAXI NHANH 24H</h2>
+                <p class="text-lg mb-6">Trực đài 24/7 - Gọi là có xe ngay</p>
+                <button class="bg-primary hover:bg-secondary text-white font-bold py-3 px-8 rounded-full transition shadow-lg transform hover:scale-105">
+                    GỌI ĐẶT XE NGAY
+                </button>
+            </div>
+
+            <div class="w-full md:w-1/2 flex justify-center md:justify-end">
+                <div class="bg-white rounded-lg shadow-2xl p-6 w-full max-w-md">
+                    <h3 class="text-center text-primary font-bold text-xl mb-4 border-b pb-2 uppercase">Đặt xe</h3>
+                    
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 mb-1">Điểm đón / Tìm xe</label>
+                            <div class="flex items-center border rounded px-3 py-2">
+                                <i class="fa-solid fa-location-dot text-red-500 mr-2"></i>
+                                <input type="text" placeholder="Nhập điểm đón..." class="w-full outline-none text-sm">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 mb-1">Điểm đến</label>
+                            <div class="flex items-center border rounded px-3 py-2">
+                                <i class="fa-solid fa-map-pin text-blue-500 mr-2"></i>
+                                <input type="text" placeholder="Nhập điểm đến..." class="w-full outline-none text-sm">
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="w-1/2">
+                                <label class="block text-xs font-semibold text-gray-500 mb-1">Loại xe</label>
+                                <select class="w-full border rounded px-3 py-2 text-sm outline-none bg-white">
+                                    <option>4 Chỗ</option>
+                                    <option>7 Chỗ</option>
+                                </select>
+                            </div>
+                            <div class="w-1/2">
+                                <label class="block text-xs font-semibold text-gray-500 mb-1">Ngày đi</label>
+                                <input type="date" class="w-full border rounded px-3 py-2 text-sm outline-none">
+                            </div>
+                        </div>
+                        <button type="button" class="w-full bg-primary hover:bg-secondary text-white font-bold py-3 rounded transition uppercase mt-2">
+                            Gửi yêu cầu
+                        </button>
+                    </form>
+
+                    <div class="mt-4 border-2 border-primary rounded-lg p-3 text-center flex items-center justify-center gap-3 bg-green-50 cursor-pointer hover:bg-green-100 transition">
+                        <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-phone-volume fa-shake"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-gray-600">TƯ VẤN BÁO GIÁ MIỄN PHÍ</p>
+                            <a href="tel:0852744439">Gọi ngay: 0852 2744 439</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center text-primary mb-8 uppercase">ĐIỂM ĐI PHỔ BIẾN</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                
+                <div class="relative rounded-lg overflow-hidden group aspect-[4/3] cursor-pointer shadow-md">
+                    <img src="https://img-cache.coccoc.com/image2?i=1&l=64/136713356" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white transition group-hover:bg-black/50">
+                        <h3 class="font-bold text-lg text-center px-2">Bảo Lộc ➞ Sân Bay Liên Khương</h3>
+                    </div>
+                </div>
+
+                <div class="relative rounded-lg overflow-hidden group aspect-[4/3] cursor-pointer shadow-md">
+                    <img src="https://cdn3.ivivu.com/2022/09/T%E1%BB%95ng-quan-du-l%E1%BB%8Bch-V%C5%A9ng-T%C3%A0u-ivivu.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white transition">
+                        <h3 class="font-bold text-lg text-center px-2">Bảo Lộc ➞ Vũng Tàu</h3>
+                    </div>
+                </div>
+
+                <div class="relative rounded-lg overflow-hidden group aspect-[4/3] cursor-pointer shadow-md">
+                    <img src="https://runglakimresort.com/Uploads/Images/tintuc/1280x904/quang-truong-lam-vien-ve-dem.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white transition">
+                        <h3 class="font-bold text-lg text-center px-2">Bảo Lộc ➞ Đà Lạt</h3>
+                    </div>
+                </div>
+
+                <div class="relative rounded-lg overflow-hidden group aspect-[4/3] cursor-pointer shadow-md">
+                    <img src="https://image.plo.vn/w2000/Uploaded/2026/awvbpciv/2025_04_13/tphcm-50-nam-vuon-minh-but-pha-9771-9873.jpg.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white transition">
+                        <h3 class="font-bold text-lg text-center px-2">Bảo Lộc ➞ TP. HCM</h3>
+                    </div>
+                </div>
+                
+                <div class="relative rounded-lg overflow-hidden group aspect-[4/3] cursor-pointer shadow-md">
+                    <img src="https://cdn3.ivivu.com/2023/10/du-l%E1%BB%8Bch-mi%E1%BB%81n-t%C3%A2y-ivivu2.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white transition">
+                        <h3 class="font-bold text-lg text-center px-2">Bảo Lộc ➞ Miền Tây</h3>
+                    </div>
+                </div>
+                
+                <div class="relative rounded-lg overflow-hidden group aspect-[4/3] cursor-pointer shadow-md">
+                    <img src="https://letsflytravel.vn/wp-content/uploads/2024/08/nha-trang-2-1536x1019.webp" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white transition">
+                        <h3 class="font-bold text-lg text-center px-2">Bảo Lộc ➞ Nha Trang</h3>
+                    </div>
+                </div>
+
+                <div class="relative rounded-lg overflow-hidden group aspect-[4/3] cursor-pointer shadow-md">
+                    <img src="https://bazantravel.com/cdn/medias/uploads/71/71107-nhung-bai-tam-dep-tai-phan-thiet-700x467.jpg" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white transition">
+                        <h3 class="font-bold text-lg text-center px-2">Bảo Lộc ➞ Phan Thiết</h3>
+                    </div>
+                </div>
+
+                <div class="relative rounded-lg overflow-hidden group aspect-[4/3] cursor-pointer shadow-md">
+                    <img src="https://cdn.tuoitrethudo.vn/stores/news_dataimages/2024/072024/16/10/ho-hoan-kiem-718520240716105044.jpg?rt=20240716105336" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-black/40 flex flex-col justify-center items-center text-white transition">
+                        <h3 class="font-bold text-lg text-center px-2">Bảo Lộc ➞ Hà Nội</h3>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center text-primary mb-8 uppercase">TIN TỨC MỚI NHẤT</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-lg shadow border flex flex-row overflow-hidden hover:shadow-lg transition">
+                    <div class="w-2/5">
+                        <img src="https://vantaisaigonxanh.vn/wp-content/uploads/2023/06/banner-taxi-cho-thue-xe-1-1536x864.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-3/5 p-4 flex flex-col justify-center">
+                        <h3 class="font-bold text-sm md:text-base text-gray-800 mb-2">Taxi Bảo Lộc đi Đà Lạt Giá Rẻ</h3>
+                        <p class="text-xs text-gray-500 mb-4 line-clamp-2">Cung cấp dịch vụ xe ghép, xe gia đình tiện chuyến Bảo Lộc đi Đà Lạt an toàn, giá rẻ...</p>
+                        <a href="#" class="inline-block border border-primary text-primary text-xs font-semibold py-1 px-4 rounded hover:bg-primary hover:text-white transition w-max">Chi tiết</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow border flex flex-row overflow-hidden hover:shadow-lg transition">
+                    <div class="w-2/5">
+                        <img src="https://hopdongxe.com/wp-content/uploads/2025/08/taxi-san-bay-lien-khuong.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-3/5 p-4 flex flex-col justify-center">
+                        <h3 class="font-bold text-sm md:text-base text-gray-800 mb-2">Taxi Bảo Lộc đi Sân Bay Liên Khương</h3>
+                        <p class="text-xs text-gray-500 mb-4 line-clamp-2">Đưa đón chuyên nghiệp tại sân bay Liên Khương, không chờ đợi, xe sạch sẽ, tài xế lịch sự...</p>
+                        <a href="#" class="inline-block border border-primary text-primary text-xs font-semibold py-1 px-4 rounded hover:bg-primary hover:text-white transition w-max">Chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 relative bg-[url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1920&auto=format&fit=crop')] bg-cover bg-fixed">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div class="relative max-w-4xl mx-auto px-4 text-center text-white">
+            <div class="flex flex-col items-center">
+                <img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_700,h_701/https://hanoidep.vn/wp-content/uploads/2025/11/Hinh-anh-avatar-gai-xinh.webp" class="w-20 h-20 rounded-full border-2 border-primary mb-4 object-cover">
+                <div class="text-yellow-400 text-sm mb-2">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="italic text-gray-300 mb-4 px-4 md:px-12 text-sm md:text-base">
+                    "Tài xế thân thiện, rành đường đèo. Xe đón đúng giờ, không có mùi say xe. Lái xe cẩn thận an toàn. Cảm ơn dịch vụ rất nhiều, sẽ tiếp tục ủng hộ!"
+                </p>
+                <h4 class="font-bold text-primary">Chị Lan Phương</h4>
+                <p class="text-xs text-gray-400">Khách hàng Bảo Lộc</p>
+            </div>
+            
+            <div class="flex justify-center gap-2 mt-6">
+                <span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+                <span class="w-2 h-2 rounded-full bg-gray-500 inline-block"></span>
+                <span class="w-2 h-2 rounded-full bg-gray-500 inline-block"></span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 text-sm">
+        <div class="max-w-7xl mx-auto px-4 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4 uppercase">TAXI BẢO LỘC  ĐI TỈNH</h3>
+                    <p class="mb-2"><i class="fa-solid fa-map-location-dot text-primary w-5"></i> <strong>Địa chỉ:</strong> P. B'Lao, TP. Bảo Lộc, Lâm Đồng.</p>
+                    <p class="mb-2"><i class="fa-solid fa-phone text-primary w-5"></i> <strong>Hotline:</strong> <span class="text-red-500 font-bold text-lg">0852. 744. 439</span></p>
+                    <p class="mb-2"><i class="fa-solid fa-envelope text-primary w-5"></i> <strong>Email:</strong> hoanganhtu12121989@gmail.com</p>
+                    <p class="mb-2"><i class="fa-solid fa-globe text-primary w-5"></i> <strong>Website:</strong> http//taxibaolocditinh.com</p>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4 uppercase">VỊ TRÍ TRỤ SỞ</h3>
+                    <div class="w-full h-40 bg-gray-700 flex items-center justify-center rounded">
+                        <span class="text-gray-400 text-xs"><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15635.833590304483!2d107.78879069756564!3d11.55484019080754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zMTU3IFBow7kgVsSDbiBDxrDhu51uZywgQuG6o28gTOG7mWM!5e0!3m2!1svi!2s!4v1777354609357!5m2!1svi!2s" width="380" height="155" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-4 uppercase">VỊ TRÍ BÃI XE</h3>
+                    <div class="w-full h-40 bg-gray-700 flex items-center justify-center rounded">
+                        <span class="text-gray-400 text-xs"><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15635.833590304483!2d107.78879069756564!3d11.55484019080754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zMTU3IFBow7kgVsSDbiBDxrDhu51uZywgQuG6o28gTOG7mWM!5e0!3m2!1svi!2s!4v1777354609357!5m2!1svi!2s" width="380" height="155" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="bg-black text-center py-3 text-xs text-gray-500 border-t border-gray-800">
+            <p>Copyright © 2026 Taxi Bảo Lộc Đi  Tỉnh. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-6 right-4 flex flex-col gap-3 z-50">
+        <a href="#" class="w-12 h-12 bg-blue-500 text-white rounded-full flex justify-center items-center text-2xl shadow-lg hover:scale-110 transition">
+            <i class="fa-solid fa-comment-dots"></i>
+        </a>
+        <a href="http://m.me/1134442696413735" class="w-12 h-12 bg-blue-600 text-white rounded-full flex justify-center items-center text-2xl shadow-lg hover:scale-110 transition">
+            <i class="fa-brands fa-facebook-messenger"></i>
+        </a>
+        <a href="tel:0852744439" class="w-12 h-12 bg-red-500 text-white rounded-full flex justify-center items-center text-xl shadow-lg hover:scale-110 transition animate-bounce">
+            <i class="fa-solid fa-phone"></i>
+        </a>
+    </div>
+
+</body>
+</html>
